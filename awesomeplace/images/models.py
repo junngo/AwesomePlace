@@ -16,10 +16,20 @@ class Image(TimeStampedModel):
     file = models.ImageField()
     location = models.CharField(max_length=140)
     caption = models.TextField()
-    creator = models.ForeignKey(user_models.User, null=True, on_delete=models.PROTECT)
+    creator = models.ForeignKey(user_models.User, 
+                             null=True,
+                             related_name = 'images',
+                             on_delete=models.PROTECT)
+    
+    @property
+    def like_count(self):
+        return self.likes.all().count()
 
     def __str__(self):
         return '{} - {}'.format(self.location, self.caption)
+    
+    class Meta:
+        ordering = ['-created_at']
 
 
 class Comment(TimeStampedModel):
