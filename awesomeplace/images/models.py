@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 from awesomeplace.users import models as user_models
 
 class TimeStampedModel(models.Model):
@@ -20,6 +21,7 @@ class Image(TimeStampedModel):
                              null=True,
                              related_name = 'images',
                              on_delete=models.PROTECT)
+    tags = TaggableManager()
 
     @property
     def like_count(self):
