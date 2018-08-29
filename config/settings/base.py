@@ -74,6 +74,7 @@ LOCAL_APPS = [
     'awesomeplace.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
     'awesomeplace.images.apps.ImagesConfig',
+    'awesomeplace.notifications.apps.NotificationsConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
