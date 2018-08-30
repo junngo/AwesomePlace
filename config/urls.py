@@ -25,6 +25,9 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^users/', include(('awesomeplace.users.urls', 'users'), namespace='users')),
     url(r'^images/', include(('awesomeplace.images.urls', 'images'), namespace='images')),
+    url(r'^notifications/'
+        , include(('awesomeplace.notifications.urls', 'notifications')
+        , namespace='notifications')),
     
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
