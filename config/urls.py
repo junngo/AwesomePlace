@@ -16,7 +16,10 @@ urlpatterns = [
     #     include(("awesomeplace.users.urls", "users"), namespace="users"),
     # ),
     #path("accounts/", include("allauth.urls")),
-    url(r'^api-token-auth/', obtain_jwt_token),
+    #url(r'^api-token-auth/', obtain_jwt_token),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+
     # Your stuff: custom urls includes go here
     url(r'^users/', include(('awesomeplace.users.urls', 'users'), namespace='users')),
     url(r'^images/', include(('awesomeplace.images.urls', 'images'), namespace='images')),
