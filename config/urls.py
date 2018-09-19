@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework_jwt.views import obtain_jwt_token
+from awesomeplace import views
 
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^notifications/'
         , include(('awesomeplace.notifications.urls', 'notifications')
         , namespace='notifications')),
+    url(r'^', views.ReactAppView.as_view()),
     
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
