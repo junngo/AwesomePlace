@@ -5,9 +5,9 @@
 // action creators
 
 // initialState
- const initialState = {
+const initialState = {
      isLoggedIn: localStorage.getItem("jwt") || false
- };
+};
 
 // reducer
 function reducer(state = initialState, action) {

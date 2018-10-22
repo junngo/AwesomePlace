@@ -1,0 +1,97 @@
+.auth {
+  width: 100%;
+  max-width: $max-page-width;
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  margin-top: 35px;
+  justify-content: center;
+  align-items: center;
+  @include breakpoint("phone") {
+    margin-top: 10px;
+  }
+  .column {
+    width: 40%;
+    @include breakpoint("phone") {
+      &:first-child {
+        display: none;
+      }
+    }
+    @include breakpoint("tablet") {
+      &:first-child {
+        display: none;
+      }
+    }
+    &:last-child {
+      width: 38%;
+      margin-left: 35px;
+      @include breakpoint("phone") {
+        width: 100%;
+        margin: 0;
+      }
+      @include breakpoint("tablet") {
+        width: 70%;
+        max-width: 350px;
+        margin: 0;
+      }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 20vh;
+      padding: 30px;
+      .grid__item {
+        background-size: cover;
+        background-position: center center;
+        padding: 5px;
+      }
+      .grid__item:first-child{
+        grid-column: span 2 ;
+        background-color: #d5ecf4;
+      }
+      .grid__item:nth-child(4){
+        grid-column: span 2 / span 2;
+        background-color:  #d5ecf4;
+      }
+    }
+    .app-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 35px;
+      .appstores {
+        margin-top: 25px;
+        img {
+          height: 40px;
+          &:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .white-box {
+      text-align: center;
+      padding: 15px;
+      @include boxBorder(no);
+      @include breakpoint("phone") {
+        background-color: transparent;
+        border: 0;
+      }
+      .change-link {
+        color: $light-blue;
+        cursor: pointer;
+      }
+      .text {
+        margin: 15px;
+      }
+    }
+    .form-box {
+      margin-bottom: 10px;
+      padding: 0 40px;
+      padding-top: 30px;
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
