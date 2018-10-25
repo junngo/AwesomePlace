@@ -6,7 +6,7 @@ import SignupForm from "components/SignupForm";
 const Auth = (props, context) => (
   <main className={styles.auth}>
     <div className={styles.column}>
-      <div class={styles.grid}>
+      <div className={styles.grid}>
         <div className={styles.grid__item}></div>
         <div className={styles.grid__item}></div>
         <div className={styles.grid__item}></div>
