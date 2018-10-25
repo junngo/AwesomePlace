@@ -17,7 +17,8 @@ class Container extends Component {
             <SignupForm
                 handleInputChange={this._handleInputChange}
                 handleSubmit={this._handleSubmit}
-                emailValue={email} 
+                emailValue={email}
+                handleFacebookLogin={this._handleFacebookLogin} 
                 fullnameValue={fullname}
                 usernameValue={username} 
                 passwordValue={password}
@@ -41,6 +42,9 @@ class Container extends Component {
         //redux (action) will be here
     };
 
+    _handleFacebookLogin = response => {
+        console.log(response);
+    };
 }
 
 export default Container;
