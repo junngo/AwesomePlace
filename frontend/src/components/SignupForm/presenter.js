@@ -13,6 +13,7 @@ const SignupForm = (props, context) => (
         callback={props.handleFacebookLogin}
         cssClass={formStyles.facebookLink}
         icon="fa-facebook-official"
+        textButton={context.t("Log in with Facebook")}
       />
     <span className={formStyles.divider}>or</span>
     <form className={formStyles.form} onSubmit={props.handleSubmit}>
