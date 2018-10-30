@@ -12,11 +12,11 @@ store.dispatch({type: "good" });
 
 ReactDOM.render(
     <Provider store ={store}>
-        <ConnectedRouter history={history}>
         <I18n translations={translations} initialLang="en" fallbackLang="en">
+        <ConnectedRouter history={history}>
             <App />
-        </I18n>
         </ConnectedRouter>
+        </I18n>
     </Provider>,
     document.getElementById('root')
 );
