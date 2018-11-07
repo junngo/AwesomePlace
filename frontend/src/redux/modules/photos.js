@@ -1,4 +1,6 @@
 // imports
+import { actionCreators as userAction } from "redux/modules/user";
+
 
 // actions
 
@@ -14,7 +16,13 @@ function getFeed() {
                 Authorization: `JWT ${token}`
             }
         })
-        .then(response => response.json())
+        // .then(response => response.json())
+        .then(response => {
+            if(response.status === 401) {
+                dispatch(userAction.logout());
+            }
+            return response.json();
+        })
         .then(json => console.log(json))
     };
 }
@@ -31,6 +39,7 @@ function reducer(state = initialState, action) {
             return state;
     }
 }
+
 // reducer functions
 
 // exports
